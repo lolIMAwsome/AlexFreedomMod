@@ -16,9 +16,10 @@ public class Command_afm extends TFM_Command
   {
     if (args.length == 0)
     {
-      playerMsg("AlexFredomMod for 'AlexFreedom', an associated all-op server.", ChatColor.GOLD);
+      playerMsg("AlexFredomMod for 'AlexFreedom', an all-op server.", ChatColor.GOLD);
       playerMsg(String.format("Version " + ChatColor.BLUE + "%s.%s" + ChatColor.BLUE + ", built %s.", new Object[] { TotalFreedomMod.pluginVersion, TotalFreedomMod.buildNumber, TotalFreedomMod.buildDate }), ChatColor.GOLD);
-      playerMsg("Created by _herobrian35_ (later worked on by _herobrian35_", ChatColor.GOLD);
+      playerMsg("Developed by _herobrian35_", ChatColor.GOLD);
+      playerMsg("Developed by tylerhyperHD", ChatColor.GOLD);
       playerMsg("Visit " + ChatColor.AQUA + "http://alexfreedommc.proboards.com/" + ChatColor.GREEN + " for more information.", ChatColor.GREEN);
     }
     else if (args.length == 1)

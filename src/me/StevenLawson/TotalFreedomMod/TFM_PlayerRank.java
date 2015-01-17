@@ -2,6 +2,8 @@ package me.StevenLawson.TotalFreedomMod;
 
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.AFM_DEVELOPERS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.FOP_DEVELOPERS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.WEBDEV;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SPECIAL_EXECS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SYS;
@@ -18,6 +20,8 @@ public enum TFM_PlayerRank
     SECURITY("the chief of " + ChatColor.RED + "Security", ChatColor.DARK_RED + "[Chief of Security]"),
     SYSTEM("a " + ChatColor.DARK_RED + "System Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
     LDEVELOPER("the " + ChatColor.DARK_PURPLE + "Lead Developer", ChatColor.DARK_PURPLE + "[Lead-Dev]"),
+    TFDEVELOPER("a " + ChatColor.DARK_PURPLE + "TotalFreedom Developer", ChatColor.DARK_PURPLE + "[TF-Dev]"),
+    FOPDEVELOPER("a " + ChatColor.DARK_PURPLE + "FreedomOP Developer", ChatColor.DARK_PURPLE + "[FOP-Dev]"),
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
     Founder("the " + ChatColor.DARK_RED + "Founder", ChatColor.DARK_RED + "[Founder]"),
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
@@ -158,9 +162,19 @@ public enum TFM_PlayerRank
         
         if (DEVELOPERS.contains(sender.getName()))
         {
-            return DEVELOPER;
+            return TFDEVELOPER;
+        }
+        
+        if (FOP_DEVELOPERS.contains(sender.getName()))
+        {
+            return FOPDEVELOPER;
         }
 
+        if (AFM_DEVELOPERS.contains(sender.getName()))
+        {
+            return DEVELOPER;
+        }
+                
         else if (SYS.contains(sender.getName()))
         {
             return SYSTEM;

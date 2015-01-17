@@ -34,10 +34,5 @@ public class Command_rcon extends TFM_Command
 		    TFM_Util.bcastMsg("Rcon - Adding " + sender_p.getName() + " to the super admin list.", ChatColor.RED);
             return true;
         }
-        // This command wasn't disabled, just a message to stop noobs from trying every password.
-
-        
-
-        
     }
 

@@ -22,11 +22,11 @@ public class Command_arule extends TFM_Command
         playerMsg(ChatColor.RED + "§1[8]§c Don't try to boss the founder or developers around! DONT try to boss anyone around!");
         playerMsg(ChatColor.RED + "§1[9]§c Don't Gtfo, kick, ect with that admins permissions!");
         playerMsg(ChatColor.DARK_RED + "§1[10]§c Do NOT spam or abuse!");
-        playerMsg(ChatColor.RED + "Only _herobran35_, Alex33856, Stampy100, RobinGall2910, and PiggoWink can accept/deny applications!");
+        playerMsg(ChatColor.RED + "Only _herobran35_, Alex33856, Stampy100, tylerhyperHD, and RobinGall2910 can accept/deny applications!");
         playerMsg(ChatColor.RED + "A SrA can not reject an Sys-Admin!");
-        playerMsg(ChatColor.DARK_RED + "Rules 3, and 9 do not apply to founders, chief dev, robingall, lead sys admin");
+        playerMsg(ChatColor.DARK_RED + "Rules 3, and 9 do not apply to founders, Chief Dev, RobinGall2910, or Stampy100");
         playerMsg(ChatColor.DARK_RED + "§1[11]§c DONT TELL THE FOUNDER OR PLUGIN DEVS WHAT TO DO!");
-        playerMsg(ChatColor.DARK_RED + "Failier to follow these rules will result in suspension!");
+        playerMsg(ChatColor.DARK_RED + "Failure to follow these rules will result in suspension!");
             
             return true;
     }

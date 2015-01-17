@@ -69,8 +69,9 @@ public class TFM_Util
 {
     private static final Map<String, Integer> ejectTracker = new HashMap<String, Integer>();
     public static final Map<String, EntityType> mobtypes = new HashMap<String, EntityType>();
-    public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "DarthSalamon", "AcidicCyanide", "wild1145", "WickedGamingUK","dsate1","tylerhyperHD","kieran3810");
-    public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "RobinGall2910", "Freelix2000", "PieGuy7896");
+    public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "DarthSalamon", "AcidicCyanide", "wild1145", "WickedGamingUK");
+    public static final List<String> AFM_DEVELOPERS = Arrays.asList("dsate1", "tylerhyperHD", "kieran3810");
+    public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "RobinGall2910", "Freelix2000", "_GeneralOfGames_");
     public static final List<String> CO_OWNER = Arrays.asList("Minecraf7pro", "Deadmon12", "_Pedo__Bear_");
     public static final List<String> SYS = Arrays.asList("Taterman814", "RedSea11001", "SonicMineCrafter");
     public static final List<String> LSYS = Arrays.asList("Stampy100");
@@ -1065,7 +1066,7 @@ public class TFM_Util
     public static boolean isHighRank(Player player)
     {
         String name = player.getName();
-        if (SYS.contains(name) || LSYS.contains(name) || name.equals("Alex33856") || name.equals("tylerhyperHD") || name.equals("_herobrian35_") || name.equals("RobinGall2910") || name.equals("dsate1"))
+        if (SYS.contains(name) || LSYS.contains(name) || AFM_DEVELOPERS.contains(name) || name.equals("Alex33856") || name.equals("_herobrian35_") || name.equals("RobinGall2910"))
         {
             return true;
         }

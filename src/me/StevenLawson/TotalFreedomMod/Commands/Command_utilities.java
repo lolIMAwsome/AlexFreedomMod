@@ -54,12 +54,12 @@ public class Command_utilities extends TFM_Command
 
                 if (player != null)
                 {
-                    TFM_Util.adminAction(sender.getName(), "Adding " + player.getName() + " to the superadmin config.", true);
+                    TFM_Util.adminAction(sender.getName(), "Adding " + player.getName() + " to the superadmin list", true);
                     TFM_AdminList.addSuperadmin(player);
                 }
                 else if (playername != null)
                 {
-                    TFM_Util.adminAction(sender.getName(), "Adding " + playername + " to the superadmin config.", true);
+                    TFM_Util.adminAction(sender.getName(), "Adding " + playername + " to the superadmin list", true);
                     TFM_AdminList.addSuperadmin(player);
                 }
                 return true;

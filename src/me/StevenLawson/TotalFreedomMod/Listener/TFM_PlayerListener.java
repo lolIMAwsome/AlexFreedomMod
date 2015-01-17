@@ -68,7 +68,7 @@ import org.bukkit.util.Vector;
 
 public class TFM_PlayerListener implements Listener
 {
-    private static final List<String> BLOCKED_MUTED_CMDS = Arrays.asList(StringUtils.split("say,me,msg,m,tell,r,reply,mail,email", ","));
+    private static final List<String> BLOCKED_MUTED_CMDS = Arrays.asList(StringUtils.split("say,me,msg,m,tell,r,reply,mail,email,purgeall", ","));
     private static final int MSG_PER_HEARTBEAT = 10;
 
     @EventHandler(priority = EventPriority.HIGH)
@@ -882,7 +882,6 @@ public class TFM_PlayerListener implements Listener
         {
             TFM_Util.bcastMsg("Warning: " + player.getName() + " has been flagged as an impostor and has been frozen!", ChatColor.RED);
             TFM_Util.bcastMsg(ChatColor.AQUA + player.getName() + " is " + TFM_PlayerRank.getLoginMessage(player));
-            TFM_Util.bcastMsg(ChatColor.RED + "Admins, ask him to verify!");
             player.getInventory().clear();
             player.setOp(false);
             player.setGameMode(GameMode.SURVIVAL);
@@ -1079,6 +1078,102 @@ public class TFM_PlayerListener implements Listener
             player.setPlayerListName(ChatColor.DARK_BLUE + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&1Admin&8-&1Trainer&8]");
             TFM_Util.bcastMsg(ChatColor.AQUA + "XxNicozillaxX is the " + ChatColor.DARK_GREEN + "NICOZILLA OF EARTH! " + ChatColor.AQUA + "and.. ");
+        }
+    }
+
+    @EventHandler
+    public void doubleJump(PlayerToggleFlightEvent event)
+    {
+        final Player player = event.getPlayer();
+        if (event.isFlying() && TFM_Util.isDoubleJumper(player))
+        {
+            player.setFlying(false);
+            Vector jump = player.getLocation().getDirection().multiply(2).setY(1.1);
+            player.setVelocity(player.getVelocity().add(jump));
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerHurt(EntityDamageEvent event)
+    {
+        if (event.getEntity() instanceof Player)
+        {
+            Player player = (Player) event.getEntity();
+            if (TFM_Util.inGod(player))
+            {
+                event.setCancelled(true);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event)
+    {
+        if (event.getEntity() instanceof Player)
+        {
+            if (event.getDamager() instanceof Player)
+            {
+                Player player = (Player) event.getDamager();
+                if (player.getGameMode() == GameMode.CREATIVE)
+                {
+                    TFM_Util.playerMsg(player, "NO GM / GOD PVP!", ChatColor.DARK_RED);
+                    event.setCancelled(true);
+                }
+            }
+            if (event.getDamager() instanceof Arrow)
+            {
+                Arrow arrow = (Arrow) event.getDamager();
+                if (arrow.getShooter() instanceof Player)
+                {
+                    Player player = (Player) arrow.getShooter();
+                    if (player.getGameMode() == GameMode.CREATIVE || TFM_Util.inGod(player))
+                    {
+                        TFM_Util.playerMsg(player, "NO GM / GOD PVP!", ChatColor.DARK_RED);
+                        event.setCancelled(true);
+                    }
+                }
+            }
+        }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onPlayerJump(PlayerMoveEvent event)
+    {
+        Location from = event.getFrom();
+        Location to = event.getTo();
+        if (to.getBlockY() > from.getBlockY())
+        {
+            Player player = event.getPlayer();
+            if (TFM_Util.isDoubleJumper(player))
+            {
+                player.setAllowFlight(true);
+            }
+        }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onPlayerDrinkPotion(PlayerItemConsumeEvent event)
+    {
+        if (event.getItem().getType() == Material.POTION && !TFM_Util.isHighRank(event.getPlayer()))
+        {
+            playerMsg(event.getPlayer(), "Please use /potion to add potion effects, thank you!", ChatColor.GREEN);
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onSplashPotion(PotionSplashEvent event)
+    {
+        if (event.getPotion().getEffects().contains(INVISIBILITY))
+        {
+            Projectile proj = (Projectile) event.getEntity();
+            if (proj.getShooter() instanceof Player)
+            {
+                Player player = (Player) proj.getShooter();
+                playerMsg(player, "You are not permitted to use invisibility potions!", ChatColor.RED);
+                event.setCancelled(true);
+            }
         }
     }
 }

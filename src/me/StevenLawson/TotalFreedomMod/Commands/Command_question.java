@@ -41,7 +41,7 @@ public class Command_question extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-    if (TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean().booleanValue() && TFM_ConfigEntry.TRAINING_SESSION.getBoolean().booleanValue())
+    if (TFM_ConfigEntry.TRAINING_SESSION.getBoolean().booleanValue())
      {
         sender.sendMessage(ChatColor.GREEN + "You've requested to talk during a meeting. We will give u access shortly.");
 

@@ -51,7 +51,7 @@ public class TotalFreedomMod extends JavaPlugin
     public static final String PLAYER_NOT_FOUND = ChatColor.GRAY + "Player not found!";
     public static final String PIE_LYRICS = "PIE FOR EVERYONE! :D";
     //
-    public static String buildNumber = "1";
+    public static String buildNumber = "3";
     public static String buildDate = TotalFreedomMod.buildDate = TFM_Util.dateToString(new Date());
     public static String buildCreator = "tylerhyperHD";
     //
@@ -83,7 +83,8 @@ public class TotalFreedomMod extends JavaPlugin
     @Override
     public void onEnable()
     {
-        TFM_Log.info("Made by tylerhyperHD, Madgeek1450, and DarthSalamon");
+        TFM_Log.info("Made by Madgeek1450 and DarthSalamon");
+        TFM_Log.info("Plugin designed by tylerhyperHD");
         TFM_Log.info("Compiled " + buildDate + " by " + buildCreator); 
         TFM_Log.info("/***********************/");
         TFM_Log.info("");
