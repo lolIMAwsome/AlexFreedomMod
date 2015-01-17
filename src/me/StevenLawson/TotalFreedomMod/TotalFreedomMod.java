@@ -39,6 +39,7 @@ public class TotalFreedomMod extends JavaPlugin
     //
     public static final String SUPERADMIN_FILE = "superadmin.yml";
     public static final String PERMBAN_FILE = "permban.yml";
+    public static final String SUSPENSION_FILE = "suspensions.yml";
     public static final String PROTECTED_AREA_FILE = "protectedareas.dat";
     public static final String SAVED_FLAGS_FILE = "savedflags.dat";
     //
@@ -111,6 +112,7 @@ public class TotalFreedomMod extends JavaPlugin
         // Load services
         TFM_AdminList.load();
         TFM_PermbanList.load();
+        TFM_SuspensionList.load();
         TFM_PlayerList.load();
         TFM_BanManager.load();
         TFM_Announcer.load();

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
+import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.plugin;
 import net.minecraft.server.v1_7_R4.MinecraftServer;
 import net.minecraft.server.v1_7_R4.PropertyManager;
 import org.bukkit.ChatColor;
@@ -13,6 +14,7 @@ import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class TFM_ServerInterface
 {
@@ -155,6 +157,28 @@ public class TFM_ServerInterface
                 }
             }
 
+            // Suspended admins
+            for (String testPlayer : TFM_SuspensionList.getSuspendedPlayers())
+            {
+                if (testPlayer.equalsIgnoreCase(username))
+                {
+                    if (TFM_AdminList.isSuperAdmin(player))
+                    {
+                    TFM_AdminList.removeSuperadmin(player);
+                    }
+                    new BukkitRunnable()
+                    {
+                    @Override
+                    public void run()
+                    {
+                    TFM_PlayerData.getPlayerData(player).setTag("&8[&7Suspended&8]");
+                    player.sendMessage(ChatColor.RED + "You have been suspended. Please read the forums on what you are suspended for.");
+                    }
+                    }.runTaskLater(plugin, 2L * 2L);
+                    return;
+                }
+            }
+            
             // Permbanned names
             for (String testPlayer : TFM_PermbanList.getPermbannedPlayers())
             {
@@ -173,7 +197,7 @@ public class TFM_ServerInterface
                 if(testPlayer.equalsIgnoreCase(username))
                 {
                     event.disallow(Result.KICK_OTHER,
-                            ChatColor.RED + "You have been hardcoded to a permban list, fuck off you twat.");
+                            ChatColor.RED + "Your username has been hardcoded to the permban list\nTherefore, you may not remove this permban.");
                     return;
                 }
             }
@@ -183,7 +207,7 @@ public class TFM_ServerInterface
                 if(TFM_Util.fuzzyIpMatch(testIp, ip, 4))
                 {
                     event.disallow(Result.KICK_OTHER,
-                            ChatColor.RED + "You have been hardcoded to a permban list, fuck off you twat.");
+                            ChatColor.RED + "Your IP has been hardcoded to the permban list\nTherefore, you may not remove this permban.");
                     return;
                 }
             }

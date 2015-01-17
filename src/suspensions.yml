@@ -1,0 +1,11 @@
+#
+# Suspended Players
+# This works like the permban list, yet it is for suspensions.
+#
+
+badplayer1:
+  - 123.123.123.123
+  - 321.321.321.321
+badplayer2:
+  - 111.111.111.111
+badplayer3: []
