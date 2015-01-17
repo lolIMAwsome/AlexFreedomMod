@@ -1,40 +1,15 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
-/*
-
-  ____                 _                              _     _             
- |  _ \    ___   ___  (_)   __ _   _ __     ___    __| |   | |__    _   _ 
- | | | |  / _ \ / __| | |  / _` | | '_ \   / _ \  / _` |   | '_ \  | | | |
- | |_| | |  __/ \__ \ | | | (_| | | | | | |  __/ | (_| |   | |_) | | |_| |
- |____/   \___| |___/ |_|  \__, | |_| |_|  \___|  \__,_|   |_.__/   \__, |
-                           |___/                                    |___/ 
-
-
-  _             _                 _                                     _   _   ____  
- | |_   _   _  | |   ___   _ __  | |__    _   _   _ __     ___   _ __  | | | | |  _ \ 
- | __| | | | | | |  / _ \ | '__| | '_ \  | | | | | '_ \   / _ \ | '__| | |_| | | | | |
- | |_  | |_| | | | |  __/ | |    | | | | | |_| | | |_) | |  __/ | |    |  _  | | |_| |
-  \__|  \__, | |_|  \___| |_|    |_| |_|  \__, | | .__/   \___| |_|    |_| |_| |____/ 
-        |___/                             |___/  |_|                                  
-
-
-
-*/
-
-import java.util.List;
-import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import me.StevenLawson.TotalFreedomMod.TFM_UuidResolver;
+import me.StevenLawson.TotalFreedomMod.TFM_SuspensionList;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
-import org.bukkit.Bukkit;
+import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Suspend an admin (beta)", usage = "/<command> [player]")
+@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH, blockHostConsole = true)
+@CommandParameters(description = "Manage suspended players and IPs.", usage = "/<command> <list | reload>")
 public class Command_suspend extends TFM_Command
 {
     @Override
@@ -45,14 +20,49 @@ public class Command_suspend extends TFM_Command
             return false;
         }
 
-        final Player player = getPlayer(args[0]);
-
-        if (player == null)
+        if (args[0].equalsIgnoreCase("list"))
         {
-            sender.sendMessage(TotalFreedomMod.PLAYER_NOT_FOUND);
-            return true;
+            dumplist(sender);
         }
-        sender_p.sendMessage("This command does not work yet. It will soon, but not yet.");
+        else if (args[0].equalsIgnoreCase("reload"))
+        {
+            if (!senderIsConsole)
+            {
+                sender.sendMessage(TotalFreedomMod.MSG_NO_PERMS);
+                return true;
+            }
+            playerMsg("Reloading suspensions...", ChatColor.RED);
+            TFM_SuspensionList.load();
+            dumplist(sender);
+        }
+        else
+        {
+            return false;
+        }
+
         return true;
+    }
+
+    private void dumplist(CommandSender sender)
+    {
+        if (TFM_SuspensionList.getSuspendedPlayers().isEmpty())
+        {
+            playerMsg(sender, "No suspended player names.");
+        }
+        else
+        {
+            playerMsg(sender, TFM_SuspensionList.getSuspendedPlayers().size() + " suspended players:");
+            playerMsg(sender, StringUtils.join(TFM_SuspensionList.getSuspendedPlayers(), ", "));
+        }
+
+        if (TFM_SuspensionList.getSuspendedIps().isEmpty())
+        {
+            playerMsg(sender, "No suspended IPs.");
+        }
+        else
+        {
+            playerMsg(sender, TFM_SuspensionList.getSuspendedIps().size() + " suspended IPs:");
+            playerMsg(sender, StringUtils.join(TFM_SuspensionList.getSuspendedIps(), ", "));
+        }
     }
 }
