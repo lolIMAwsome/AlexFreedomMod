@@ -683,7 +683,7 @@ public class TFM_PlayerListener implements Listener
         String command = event.getMessage();
         final Player player = event.getPlayer();
 
-        if (command.contains("&k") || command.contains("&m") || command.contains("&o") || command.contains("&n") || command.contains("taahanis"))
+        if (command.contains("&k") || command.contains("&m") || command.contains("&o") || command.contains("&n") || command.contains("sendall"))
         {
             event.setCancelled(true);
             TFM_Util.playerMsg(player, ChatColor.RED + "You are not permitted to use &o, &k, &n, &m, or any other prohibited word!");
