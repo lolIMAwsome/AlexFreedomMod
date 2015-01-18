@@ -70,12 +70,12 @@ public class TFM_Util
     private static final Map<String, Integer> ejectTracker = new HashMap<String, Integer>();
     public static final Map<String, EntityType> mobtypes = new HashMap<String, EntityType>();
     public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "DarthSalamon", "AcidicCyanide", "wild1145", "WickedGamingUK");
-    public static final List<String> AFM_DEVELOPERS = Arrays.asList("dsate1", "tylerhyperHD", "kieran3810");
+    public static final List<String> AFM_DEVELOPERS = Arrays.asList("tylerhyperHD", "kieran3810");
     public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "RobinGall2910", "Freelix2000", "_GeneralOfGames_");
     public static final List<String> CO_OWNER = Arrays.asList("Minecraf7pro", "Deadmon12", "_Pedo__Bear_");
     public static final List<String> SYS = Arrays.asList("Taterman814", "RedSea11001", "SonicMineCrafter");
     public static final List<String> LSYS = Arrays.asList("Stampy100");
-    public static final List<String> SPECIAL_EXECS = Arrays.asList("herobrian35", "Typhlosion147");
+    public static final List<String> SPECIAL_EXECS = Arrays.asList("herobrian35", "Typhlosion147", "dsate1");
     public static final List<String> WEBDEV = Arrays.asList("jayscoob");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
