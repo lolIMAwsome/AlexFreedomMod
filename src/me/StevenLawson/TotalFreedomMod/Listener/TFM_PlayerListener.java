@@ -1049,7 +1049,9 @@ public class TFM_PlayerListener implements Listener
         {
             //Set tag
             player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&eSpecial-Exec&8 / &5Developer&8]");
+            //Entrance
+             TFM_Util.bcastMsg(ChatColor.AQUA + "Gracie is a " + ChatColor.YELLOW + "Special-Executive" + ChatColor.AQUA + "and a " + ChatColor.DARK_PURPLE + "Developer");
         }
         else if (username.equalsIgnoreCase("kieran3810"))
         {
