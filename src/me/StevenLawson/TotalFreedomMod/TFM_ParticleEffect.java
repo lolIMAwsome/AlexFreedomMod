@@ -7,7 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-/*  10:    */
+
 /*  11:    */ public enum TFM_ParticleEffect
 /*  12:    */ {
     /*  13: 12 */ HUGE_EXPLODE("hugeexplosion", 0), LARGE_EXPLODE("largeexplode", 1), FIREWORK_SPARK("fireworksSpark", 2), AIR_BUBBLE("bubble", 3), SUSPEND("suspend", 4), DEPTH_SUSPEND("depthSuspend", 5), TOWN_AURA("townaura", 6), CRITICAL_HIT("crit", 7), MAGIC_CRITICAL_HIT("magicCrit", 8), MOB_SPELL("mobSpell", 9), MOB_SPELL_AMBIENT("mobSpellAmbient", 10), SPELL("spell", 11), INSTANT_SPELL("instantSpell", 12), BLUE_SPARKLE("witchMagic", 13), NOTE_BLOCK("note", 14), ENDER("portal", 15), ENCHANTMENT_TABLE("enchantmenttable", 16), EXPLODE("explode", 17), FIRE("flame", 18), LAVA_SPARK("lava", 19), FOOTSTEP("footstep", 20), SPLASH("splash", 21), LARGE_SMOKE("largesmoke", 22), CLOUD("cloud", 23), REDSTONE_DUST("reddust", 24), SNOWBALL_HIT("snowballpoof", 25), DRIP_WATER("dripWater", 26), DRIP_LAVA("dripLava", 27), SNOW_DIG("snowshovel", 28), SLIME("slime", 29), HEART("heart", 30), ANGRY_VILLAGER("angryVillager", 31), GREEN_SPARKLE("happyVillager", 32), ICONCRACK("iconcrack", 33), TILECRACK("tilecrack", 34);
@@ -108,37 +108,29 @@ import org.bukkit.entity.Player;
             /*  96:    */        }
         /*  97:    */ catch (Exception ex)
         /*  98:    */ {
-            /*  99:141 */ ex.printStackTrace();
-            /* 100:    */        }
-        /* 101:142 */ return null;
-        /* 102:    */    }
-    /* 103:    */
-    /* 104:    */ private static Class<?> getCraftClass(String name)
-    /* 105:    */ {
-        /* 106:147 */ String version = getVersion() + ".";
-        /* 107:148 */ String className = "net.minecraft.server." + version + name;
-        /* 108:149 */ Class<?> clazz = null;
-        /* 109:    */ try
-        /* 110:    */ {
-            /* 111:151 */ clazz = Class.forName(className);
-            /* 112:    */        }
-        /* 113:    */ catch (ClassNotFoundException e)
-        /* 114:    */ {
-            /* 115:153 */ e.printStackTrace();
-            /* 116:    */        }
-        /* 117:155 */ return clazz;
-        /* 118:    */    }
-    /* 119:    */
-    /* 120:    */ private static String getVersion()
-    /* 121:    */ {
-        /* 122:159 */ return Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
-        /* 123:    */    }
-    /* 124:    */ }
-
-/* Location:           Z:\home\robingall2910\NetBeansProjects\FreedomOPMod\freedomopmod\FreedomOpMod.jar
-
- * Qualified Name:     me.StevenLawson.TotalFreedomMod.TFM_ParticleEffect
-
- * JD-Core Version:    0.7.0.1
-
- */
+             ex.printStackTrace();
+                    }
+         return null;
+            }
+    
+     private static Class<?> getCraftClass(String name)
+     {
+         String version = getVersion() + ".";
+         String className = "net.minecraft.server." + version + name;
+         Class<?> clazz = null;
+         try
+         {
+             clazz = Class.forName(className);
+                    }
+         catch (ClassNotFoundException e)
+         {
+             e.printStackTrace();
+                    }
+         return clazz;
+            }
+    
+     private static String getVersion()
+     {
+         return Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
+            }
+     }

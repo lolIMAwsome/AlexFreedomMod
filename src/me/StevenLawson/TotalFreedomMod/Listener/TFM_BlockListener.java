@@ -181,10 +181,10 @@ public class TFM_BlockListener implements Listener
                 {
                     TFM_Log.info(String.format("%s placed lava @ %s", player.getName(), TFM_Util.formatLocation(event.getBlock().getLocation())));
 
-                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                 }
                 else
                 {
+                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
                     player.sendMessage(ChatColor.GRAY + "Lava placement is currently disabled.");
 
@@ -199,10 +199,10 @@ public class TFM_BlockListener implements Listener
                 {
                     TFM_Log.info(String.format("%s placed water @ %s", player.getName(), TFM_Util.formatLocation(event.getBlock().getLocation())));
 
-                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                 }
                 else
                 {
+                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
                     player.sendMessage(ChatColor.GRAY + "Water placement is currently disabled.");
 
@@ -216,10 +216,10 @@ public class TFM_BlockListener implements Listener
                 {
                     TFM_Log.info(String.format("%s placed fire @ %s", player.getName(), TFM_Util.formatLocation(event.getBlock().getLocation())));
 
-                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                 }
                 else
                 {
+                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
                     player.sendMessage(ChatColor.GRAY + "Fire placement is currently disabled.");
 
@@ -233,10 +233,10 @@ public class TFM_BlockListener implements Listener
                 {
                     TFM_Log.info(String.format("%s placed TNT @ %s", player.getName(), TFM_Util.formatLocation(event.getBlock().getLocation())));
 
-                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                 }
                 else
                 {
+                    player.getInventory().clear(player.getInventory().getHeldItemSlot());
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
 
                     player.sendMessage(ChatColor.GRAY + "TNT is currently disabled.");

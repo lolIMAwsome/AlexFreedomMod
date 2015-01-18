@@ -74,9 +74,7 @@ public final class TFM_AdminWorld extends TFM_CustomWorld
         signData.setFacingDirection(BlockFace.NORTH);
 
         welcomeSign.setLine(0, ChatColor.GREEN + "AdminWorld");
-        welcomeSign.setLine(1, ChatColor.DARK_GRAY + "---");
-        welcomeSign.setLine(2, ChatColor.YELLOW + "Spawn Point");
-        welcomeSign.setLine(3, ChatColor.DARK_GRAY + "---");
+        welcomeSign.setLine(1, ChatColor.YELLOW + "Spawn Point");
         welcomeSign.update();
 
         TFM_GameRuleHandler.commitGameRules();

@@ -54,9 +54,7 @@ public class TFM_MinigameWorld extends TFM_CustomWorld
         signData.setFacingDirection(BlockFace.NORTH);
 
         welcomeSign.setLine(0, ChatColor.GREEN + "MiniGames World");
-        welcomeSign.setLine(1, ChatColor.DARK_GRAY + "---");
-        welcomeSign.setLine(2, ChatColor.YELLOW + "Spawn Point");
-        welcomeSign.setLine(3, ChatColor.DARK_GRAY + "---");
+        welcomeSign.setLine(1, ChatColor.YELLOW + "Spawn Point");
         welcomeSign.update();
 
         TFM_GameRuleHandler.commitGameRules();

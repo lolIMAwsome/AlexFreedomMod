@@ -3,6 +3,7 @@ package me.StevenLawson.TotalFreedomMod.Listener;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_BanManager;
 import me.StevenLawson.TotalFreedomMod.TFM_ServerInterface;
+import me.StevenLawson.TotalFreedomMod.TFM_SuspensionList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
