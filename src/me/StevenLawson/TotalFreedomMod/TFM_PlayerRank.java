@@ -23,7 +23,7 @@ public enum TFM_PlayerRank
     TFDEVELOPER("a " + ChatColor.DARK_PURPLE + "TotalFreedom Developer", ChatColor.DARK_PURPLE + "[TF-Dev]"),
     FOPDEVELOPER("a " + ChatColor.DARK_PURPLE + "FreedomOP Developer", ChatColor.DARK_PURPLE + "[FOP-Dev]"),
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
-    WARGO("a " + ChatColor.DARK_PURPLE + "Developer" + ChatColor.AQUA + " and a " + ChatColor.YELLOW + "Special Executive", ChatColor.DARK_PURPLE + "[Dev " + ChatColor.GRAY + "/" + ChatColor.YELLOW + " Spec-Exec]"),
+    WARGO("a " + ChatColor.YELLOW + "Special Executive" + ChatColor.AQUA + " and a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.YELLOW + "[Spec-Exec]"),
     Founder("the " + ChatColor.DARK_RED + "Founder", ChatColor.DARK_RED + "[Founder]"),
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
