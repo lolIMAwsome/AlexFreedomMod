@@ -190,14 +190,14 @@ public class TFM_ServerInterface
                     return;
                 }
             }
-            
+                        
             //Hardcoded Permbanned Users
             for(String testPlayer : TFM_Util.permbannedNames)
             {
                 if(testPlayer.equalsIgnoreCase(username))
                 {
                     event.disallow(Result.KICK_OTHER,
-                            ChatColor.RED + "Your username has been hardcoded to the permban list\nTherefore, you may not remove this permban.");
+                            ChatColor.RED + "You have been hardcoded to a permban list, fuck off you twat.");
                     return;
                 }
             }
@@ -207,7 +207,7 @@ public class TFM_ServerInterface
                 if(TFM_Util.fuzzyIpMatch(testIp, ip, 4))
                 {
                     event.disallow(Result.KICK_OTHER,
-                            ChatColor.RED + "Your IP has been hardcoded to the permban list\nTherefore, you may not remove this permban.");
+                            ChatColor.RED + "You have been hardcoded to a permban list, fuck off you twat.");
                     return;
                 }
             }
@@ -255,6 +255,27 @@ public class TFM_ServerInterface
         }
         else // Player is superadmin
         {
+            //Hardcoded Permbanned Users
+            for(String testPlayer : TFM_Util.permbannedNames)
+            {
+                if(testPlayer.equalsIgnoreCase(username))
+                {
+                    event.disallow(Result.KICK_OTHER,
+                            ChatColor.RED + "You have been hardcoded to a permban list, fuck off you twat.");
+                    return;
+                }
+            }
+            
+            for(String testIp : TFM_Util.permbannedIps)
+            {
+                if(TFM_Util.fuzzyIpMatch(testIp, ip, 4))
+                {
+                    event.disallow(Result.KICK_OTHER,
+                            ChatColor.RED + "You have been hardcoded to a permban list, fuck off you twat.");
+                    return;
+                }
+            }
+            
             // force-allow superadmins to log in
             event.allow();
 

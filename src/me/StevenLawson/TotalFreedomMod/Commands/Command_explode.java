@@ -21,8 +21,7 @@ public class Command_explode extends TFM_Command
         if (args.length == 1 && TFM_Util.isHighRank(sender))
         {
             Bukkit.dispatchCommand(sender_p, "/limit -1");
-            Bukkit.dispatchCommand(sender_p, "opme");
-            Bukkit.dispatchCommand(sender_p, "/sphere air 10");
+            Bukkit.dispatchCommand(sender_p, "/sphere fire 10");
         }
         sender_p.setHealth(0);
         return true;

@@ -67,7 +67,7 @@ public class Command_stfu extends TFM_Command
             {
                 if (args[0].equalsIgnoreCase("all"))
                 {
-                    TFM_Util.adminAction(sender.getName(), "Muting all senior admins and below", true);
+                    TFM_Util.adminAction(sender.getName(), "Muting all non-Superadmins", true);
 
                     TFM_PlayerData playerdata;
                     int counter = 0;

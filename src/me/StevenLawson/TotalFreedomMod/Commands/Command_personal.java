@@ -32,13 +32,10 @@ public class Command_personal extends TFM_Command
         String which;
         if (args.length >= 1)
         {
-            if (!senderIsConsole)
+            if (!TFM_Util.isHighRank(sender))
             {
-                if (!TFM_Util.isHighRank(sender_p))
-                {
-                    TFM_Util.playerMsg(sender, TotalFreedomMod.MSG_NO_PERMS, ChatColor.RED);
-                    return true;
-                }
+                TFM_Util.playerMsg(sender, TotalFreedomMod.MSG_NO_PERMS, ChatColor.RED);
+                return true;
             }
             which = args[0];
         }
