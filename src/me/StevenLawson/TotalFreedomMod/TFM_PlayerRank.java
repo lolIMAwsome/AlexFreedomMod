@@ -4,6 +4,7 @@ import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.AFM_DEVELOPERS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.FOP_DEVELOPERS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.LSYSTEM;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.WEBDEV;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SPECIAL_EXECS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SYS;
@@ -140,12 +141,7 @@ public enum TFM_PlayerRank
         {
             return LSYS;
         }
-        
-        if (sender.getName().equals("DarkDoge108"))
-        {
-            return LSYS;
-        }
-            
+         
         if (sender.getName().equals("HollywoodFred"))
         {
             return SECURITY;
@@ -184,6 +180,11 @@ public enum TFM_PlayerRank
         else if (SYS.contains(sender.getName()))
         {
             return SYSTEM;
+        }
+        
+        else if (LSYSTEM.contains(sender.getName()))
+        {
+            return LSYS;
         }
                 
         else if (SPECIAL_EXECS.contains(sender.getName()))

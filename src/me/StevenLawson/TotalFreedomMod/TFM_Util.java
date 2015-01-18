@@ -74,7 +74,7 @@ public class TFM_Util
     public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "RobinGall2910", "Freelix2000", "_GeneralOfGames_");
     public static final List<String> CO_OWNER = Arrays.asList("Minecraf7pro", "Deadmon12", "_Pedo__Bear_");
     public static final List<String> SYS = Arrays.asList("Taterman814", "RedSea11001", "SonicMineCrafter");
-    public static final List<String> LSYS = Arrays.asList("Stampy100");
+    public static final List<String> LSYSTEM = Arrays.asList("Stampy100");
     public static final List<String> SPECIAL_EXECS = Arrays.asList("herobrian35", "Typhlosion147", "dsate1");
     public static final List<String> WEBDEV = Arrays.asList("jayscoob");
     private static final Random RANDOM = new Random();
@@ -1066,7 +1066,7 @@ public class TFM_Util
     public static boolean isHighRank(Player player)
     {
         String name = player.getName();
-        if (SYS.contains(name) || LSYS.contains(name) || AFM_DEVELOPERS.contains(name) || name.equals("Alex33856") || name.equals("_herobrian35_") || name.equals("RobinGall2910"))
+        if (SYS.contains(name) || LSYSTEM.contains(name) || AFM_DEVELOPERS.contains(name) || name.equals("Alex33856") || name.equals("_herobrian35_") || name.equals("RobinGall2910"))
         {
             return true;
         }
