@@ -40,6 +40,7 @@ public class TotalFreedomMod extends JavaPlugin
     public static final String SUPERADMIN_FILE = "superadmin.yml";
     public static final String PERMBAN_FILE = "permban.yml";
     public static final String SUSPENSION_FILE = "suspensions.yml";
+    public static final String EXPLODING_FILE = "exploding.yml";
     public static final String PROTECTED_AREA_FILE = "protectedareas.dat";
     public static final String SAVED_FLAGS_FILE = "savedflags.dat";
     //
@@ -47,7 +48,7 @@ public class TotalFreedomMod extends JavaPlugin
     public static final String YOU_ARE_OP = ChatColor.YELLOW + "You are now op!";
     public static final String YOU_ARE_NOT_OP = ChatColor.YELLOW + "You are no longer op!";
     public static final String CAKE_LYRICS = "But there's no sense crying over every mistake. You just keep on trying till you run out of cake.";
-    public static final String COOKIE_LYRICS = "But there's no sense crying over every mistake. You just keep on trying till you run out of cookies.";
+    public static final String COOKIE_LYRICS = "But there's no sense crying over every mistake. You just keep on trying till you run out of FUCKING COOKIES!";
     public static final String NOT_FROM_CONSOLE = "This command may not be used from the console.";
     public static final String PLAYER_NOT_FOUND = ChatColor.GRAY + "Player not found!";
     public static final String PIE_LYRICS = "PIE FOR EVERYONE! :D";
@@ -112,6 +113,7 @@ public class TotalFreedomMod extends JavaPlugin
         // Load services
         TFM_AdminList.load();
         TFM_PermbanList.load();
+        TFM_ExplodingList.load();
         TFM_SuspensionList.load();
         TFM_PlayerList.load();
         TFM_BanManager.load();

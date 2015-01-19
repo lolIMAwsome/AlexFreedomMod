@@ -4,6 +4,7 @@ import com.earth2me.essentials.commands.PlayerNotFoundException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import me.StevenLawson.TotalFreedomMod.Bridge.TFM_WorldEditBridge;
+import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager;
 import me.StevenLawson.TotalFreedomMod.TFM_ServerInterface;
@@ -103,8 +104,7 @@ public class Command_impl extends TFM_Command
             p.setHealth(0.0D);
             p.closeInventory();
             p.getInventory().clear();
-            server.dispatchCommand(sender, "co rb u:" + player.getName() + " t:24h r:global #silent");
-            TFM_RollbackManager.rollback(p.getName());
+            server.dispatchCommand(sender, "co rollback p:" + player.getName() + " t:24h r:global #silent");
           }
         }.runTaskLater(this.plugin, 60L);
         
@@ -147,8 +147,7 @@ public class Command_impl extends TFM_Command
             p.setHealth(0.0D);
             p.closeInventory();
             p.getInventory().clear();
-            server.dispatchCommand(sender, "co rb u:" + player.getName() + " t:24h r:global #silent");
-            TFM_RollbackManager.rollback(p.getName());
+            server.dispatchCommand(sender, "co rollback p:" + player.getName() + " t:24h r:global #silent");
           }
         }.runTaskLater(this.plugin, 60L);
         
@@ -229,7 +228,13 @@ public class Command_impl extends TFM_Command
         p = getPlayer(args[1]);
         TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(p);
         TFM_Util.adminAction(sender_p.getName(), "Drowning " + p.getName(), true);
+        if (TFM_AdminList.isSuperAdmin(p))
+        {
+        playerdata.setCommandsBlocked(false);
+        }
+        else {
         playerdata.setCommandsBlocked(true);
+        }
         playerdata.setHalted(true);
         playerdata.setFrozen(true);
         playerdata.setMuted(true);

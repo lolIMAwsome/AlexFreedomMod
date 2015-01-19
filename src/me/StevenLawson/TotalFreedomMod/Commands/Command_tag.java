@@ -104,6 +104,7 @@ public class Command_tag extends TFM_Command
 
                 TFM_PlayerData.getPlayerData(player).setTag(null);
                 playerMsg("Removed " + player.getName() + "'s tag.");
+                sender_p.sendMessage("An administrator has removed your tag due to violations used with it.");
 
                 return true;
             }

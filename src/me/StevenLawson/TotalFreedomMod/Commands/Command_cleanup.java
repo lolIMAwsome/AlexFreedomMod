@@ -48,7 +48,7 @@ public class Command_cleanup extends TFM_Command
                 server.dispatchCommand(sender, "wipeuserdata");
                 server.dispatchCommand(sender, "cc");
                 TFM_Util.bcastMsg(ChatColor.GREEN + "Nighly clean up Completed. Reloading the server.");
-                server.dispatchCommand(sender, "fopm reload");
+                server.dispatchCommand(sender, "tfm reload");
             }
         }
 

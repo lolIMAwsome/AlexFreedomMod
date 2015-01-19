@@ -26,7 +26,6 @@ import me.StevenLawson.TotalFreedomMod.TFM_Ban;
 import me.StevenLawson.TotalFreedomMod.TFM_BanManager;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import me.StevenLawson.TotalFreedomMod.TFM_PermbanList;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;

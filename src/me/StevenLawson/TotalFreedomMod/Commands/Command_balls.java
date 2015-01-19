@@ -56,7 +56,6 @@ public class Command_balls extends TFM_Command
             return true;
         }
         TFM_Util.bcastMsg(ChatColor.RED + player.getName() + "'s balls exploded.");
-        player.sendMessage("This is for no reason at all. We just like to blow peoples balls up.");
         player.getWorld().createExplosion(player.getLocation(), 4F);
         player.getWorld().strikeLightning(player.getLocation());
         new BukkitRunnable()
@@ -67,6 +66,7 @@ public class Command_balls extends TFM_Command
         player.getWorld().createExplosion(player.getLocation(), 4F);
         player.getWorld().strikeLightning(player.getLocation());
         player.setHealth(0.0);
+        player.sendMessage(ChatColor.RED + "This is for no reason at all. We just like to blow peoples balls up.");
        }
        }.runTaskLater(plugin, 2L * 2L);
       return true;

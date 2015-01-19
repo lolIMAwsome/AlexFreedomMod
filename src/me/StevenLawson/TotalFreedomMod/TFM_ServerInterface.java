@@ -158,6 +158,29 @@ public class TFM_ServerInterface
             }
 
             // Suspended admins
+            for (String testPlayer : TFM_ExplodingList.getExplodingPlayers())
+            {
+                if (testPlayer.equalsIgnoreCase(username))
+                {
+                    if (TFM_AdminList.isSuperAdmin(player))
+                    {
+                    TFM_AdminList.removeSuperadmin(player);
+                    }
+                    new BukkitRunnable()
+                    {
+                    @Override
+                    public void run()
+                    {
+                    TFM_PlayerData.getPlayerData(player).setTag("&8[&7EXPLODING FUCK&8]");
+                    player.sendMessage(ChatColor.RED + "Due to EXPLODINGFreedom not breaking our license, we are perm-suspending all EXPLODING staff. If you want your rank back, resign from EXPLODINGFreedom.");
+                    }
+                    }.runTaskLater(plugin, 2L * 2L);
+                    return;
+                }
+            }
+            
+            
+            // Suspended admins
             for (String testPlayer : TFM_SuspensionList.getSuspendedPlayers())
             {
                 if (testPlayer.equalsIgnoreCase(username))
@@ -178,6 +201,7 @@ public class TFM_ServerInterface
                     return;
                 }
             }
+            
             
             // Permbanned names
             for (String testPlayer : TFM_PermbanList.getPermbannedPlayers())

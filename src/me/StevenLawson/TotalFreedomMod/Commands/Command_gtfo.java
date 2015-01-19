@@ -14,6 +14,7 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Makes someone GTFO (deop and ip ban by username).", usage = "/<command> <partialname>")
@@ -71,7 +72,8 @@ public class Command_gtfo extends TFM_Command
         TFM_Util.bcastMsg(String.format("Banning: %s, IP: %s ", player.getName(), ip) + (reason != null ? ("- Reason: " + ChatColor.YELLOW + reason) : ""), ChatColor.RED);
 
         TFM_BanManager.addIpBan(new TFM_Ban(ip, player.getName(), sender.getName(), null, reason));
-
+        sender_p.sendMessage(ChatColor.RED + "If the rollback fails in coreprotect, please use /rollbackfailed.");
+        
         // ban username:
         TFM_BanManager.addUuidBan(new TFM_Ban(TFM_Util.getUuid(player), player.getName(), sender.getName(), null, reason));
 

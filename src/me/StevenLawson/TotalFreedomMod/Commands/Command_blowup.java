@@ -36,7 +36,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(
-        description = "Make someone's balls explode.",
+        description = "Blow someone up. This is the most sudden cmd ever.",
         usage = "/<command> [player]")
 public class Command_blowup extends TFM_Command
 {
@@ -55,29 +55,15 @@ public class Command_blowup extends TFM_Command
             sender.sendMessage(TotalFreedomMod.PLAYER_NOT_FOUND);
             return true;
         }
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
         player.setHealth(0.0);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
-        player.getWorld().createExplosion(player.getLocation(), 5F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
+        player.getWorld().createExplosion(player.getLocation(), 10F);
         player.getWorld().createExplosion(player.getLocation(), 5F);
         player.getWorld().createExplosion(player.getLocation(), 5F);
         player.getWorld().createExplosion(player.getLocation(), 5F);

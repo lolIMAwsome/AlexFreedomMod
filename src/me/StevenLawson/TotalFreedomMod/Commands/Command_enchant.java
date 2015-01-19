@@ -98,6 +98,7 @@ public class Command_enchant extends TFM_Command
                 for(Enchantment ench : Enchantment.values())
                 {
                     itemInHand.addUnsafeEnchantment(ench, level);
+                    playerMsg("Added god enchantments to this item.");
                 }
             }
 

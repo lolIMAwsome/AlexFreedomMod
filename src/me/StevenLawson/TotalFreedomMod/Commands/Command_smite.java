@@ -42,6 +42,12 @@ public class Command_smite extends TFM_Command
         else
         {
             smite(player);
+            TFM_Util.playerMsg(sender, "I made smite reasons for a reason, use them please!", ChatColor.RED);
+            TFM_Util.playerMsg(sender, "Use them so I can remove this from the code!", ChatColor.RED);
+            if (sender instanceof Player)
+            {
+                ((Player) sender).setHealth(0d);
+            }
         }
 
         return true;

@@ -98,7 +98,7 @@ public class Command_asshole extends TFM_Command
     
     public static void smite(final Player player)
     {
-        TFM_Util.bcastMsg(player.getName() + " is being a damn stupid asshole and needs to stop.\nThey have thus been smitten!", ChatColor.RED);
+        TFM_Util.bcastMsg(player.getName() + " is being a damn stupid asshole and needs to stop.\nWhat an asshole!", ChatColor.RED);
         //Deop
         player.setOp(false);
 
