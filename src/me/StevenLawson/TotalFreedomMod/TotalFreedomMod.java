@@ -113,7 +113,6 @@ public class TotalFreedomMod extends JavaPlugin
         // Load services
         TFM_AdminList.load();
         TFM_PermbanList.load();
-        TFM_ExplodingList.load();
         TFM_SuspensionList.load();
         TFM_PlayerList.load();
         TFM_BanManager.load();
