@@ -18,7 +18,7 @@ public enum TFM_PlayerRank
     CoOwner("the " + ChatColor.BLUE + "Co-Owner", ChatColor.BLUE + "[Co-Owner]"),
     CDEV("the " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + " and the" + ChatColor.BLUE + " AlexFreedom Creator", ChatColor.BLUE + "[Owner]"),
     FARAH("a " + ChatColor.LIGHT_PURPLE + "Senior Admin" + ChatColor.AQUA + " and is" + ChatColor.GREEN + " bae", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    SECURITY("the chief of " + ChatColor.RED + "Security", ChatColor.DARK_RED + "[Chief of Security]"),
+    SECURITY("the" + ChatColor.RED + "Chief of Security", ChatColor.DARK_RED + "[Chief of Security]"),
     SYSTEM("a " + ChatColor.DARK_RED + "System Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
     LDEVELOPER("the " + ChatColor.DARK_PURPLE + "Lead Developer", ChatColor.DARK_PURPLE + "[Lead-Dev]"),
     TFDEVELOPER("a " + ChatColor.DARK_PURPLE + "TotalFreedom Developer", ChatColor.DARK_PURPLE + "[TF-Dev]"),
@@ -35,6 +35,7 @@ public enum TFM_PlayerRank
     OWNER("the " + ChatColor.DARK_RED + "Owner", ChatColor.DARK_RED + "[Owner]"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
     WEBDEVS("a " + ChatColor.RED + "Web Developer", ChatColor.DARK_RED + "[Web-Dev]"),
+    JAY("the " + ChatColor.RED + "Lead Web Developer", ChatColor.DARK_RED + "[L-Web-Dev]"),
     HELPER("a " + ChatColor.RED + "Helper", ChatColor.RED + "[Helper]"),
     SPEC_EXEC("a " + ChatColor.YELLOW + "Special Executive", ChatColor.YELLOW + "[Spec-Exec]"),
     MAN("the " + ChatColor.DARK_RED + "Admin Manager", ChatColor.DARK_RED + "[Admin Manager]"),
@@ -110,6 +111,11 @@ public enum TFM_PlayerRank
         if (sender.getName().equals("FarahIsAwesome"))
         {
             return FARAH;
+        }
+        
+        if (sender.getName().equals("jayscoob"))
+        {
+            return JAY;
         }
         
         if (sender.getName().equals("XxNicozillaxX"))

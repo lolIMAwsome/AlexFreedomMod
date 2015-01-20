@@ -24,8 +24,6 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 import java.util.Arrays;
 import java.util.List;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
-import net.camtech.camutils.CUtils_Attributes;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -35,11 +33,7 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Horse;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.HorseInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -53,9 +47,9 @@ public class Command_purple extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-             if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("_Herobrian35_") && !sender.getName().equals("Alex33856"))
+     if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("_Herobrian35_") && !sender.getName().equals("Alex33856"))
         {
-            sender_p.sendMessage(ChatColor.RED + "Only Tyler, Hero, and Alex may use this command.");
+            sender_p.sendMessage(ChatColor.RED + "Only Tyler, Hero, and Alex may use this command.\nNo permissions for the people who aren't purple.");
             sender_p.setHealth(0.0);
 
             if (!senderIsConsole)
@@ -64,7 +58,7 @@ public class Command_purple extends TFM_Command
             }
             else
             {
-                sender_p.sendMessage(ChatColor.RED + "Only Tyler, Hero, and Alex may use this command.");
+                sender_p.sendMessage(ChatColor.RED + "Only Tyler, Hero, and Alex may use this command.\nNo permissions for the people who aren't purple.");
                 sender_p.setHealth(0.0);
             }
 
@@ -95,25 +89,25 @@ public class Command_purple extends TFM_Command
                 {
                 World world = player.getWorld();
                 Location loc = player.getLocation();
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
-                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with Purple!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                 world.strikeLightningEffect(loc);
                 }
         for(Player player : Bukkit.getOnlinePlayers())
@@ -129,85 +123,64 @@ public class Command_purple extends TFM_Command
                 meta.setLore((List)lore);
                 CamBow.setItemMeta(meta);
                 inv.addItem(CamBow);
-                }
-                for(Player player : Bukkit.getOnlinePlayers())
-                {
-                PlayerInventory inv = player.getInventory();
                 ItemStack CamSword = new ItemStack(Material.GOLD_SWORD, 1);
                 for (Enchantment ench : Enchantment.values()) {
                 CamSword.addUnsafeEnchantment(ench, 32767);
                 }
-                ItemMeta meta = CamSword.getItemMeta();
-                meta.setDisplayName(ChatColor.DARK_GREEN + "The Purple Blade");
-                Object lore = Arrays.asList(new String[] { ChatColor.BLUE + "The purple has the power", ChatColor.BLUE + "to wield this legendary blade!" });
-                meta.setLore((List)lore);
-                CamSword.setItemMeta(meta);
+                ItemMeta sword = CamSword.getItemMeta();
+                sword.setDisplayName(ChatColor.DARK_GREEN + "The Purple Blade");
+                Object a = Arrays.asList(new String[] { ChatColor.BLUE + "The purple has the power", ChatColor.BLUE + "to wield this legendary blade!" });
+                sword.setLore((List)a);
+                CamSword.setItemMeta(sword);
                 inv.addItem(CamSword);
-                }
-                for(Player player : Bukkit.getOnlinePlayers())
-                {
-                    PlayerInventory inv = player.getInventory();
-                    ItemStack CamArrow = new ItemStack(Material.ARROW, 1);
-                    for (Enchantment ench : Enchantment.values()) {
+                ItemStack CamArrow = new ItemStack(Material.ARROW, 1);
+                for (Enchantment ench : Enchantment.values()) {
                       CamArrow.addUnsafeEnchantment(ench, 32767);
-                    }
-                ItemMeta meta = CamArrow.getItemMeta();
-                meta.setDisplayName(ChatColor.DARK_PURPLE + "Purple Arrow");
-                Object lore = Arrays.asList(new String[] { ChatColor.BLUE + "This arrow has a mysterious", ChatColor.BLUE + "purple aura around it..." });
-                meta.setLore((List)lore);
-                CamArrow.setItemMeta(meta);
-                inv.addItem(CamArrow);
                 }
-                for(Player player : Bukkit.getOnlinePlayers())
-                {
-                PlayerInventory inv = player.getInventory();
+                ItemMeta arrow = CamArrow.getItemMeta();
+                arrow.setDisplayName(ChatColor.DARK_PURPLE + "Purple Arrow");
+                Object b = Arrays.asList(new String[] { ChatColor.BLUE + "This arrow has a mysterious", ChatColor.BLUE + "purple aura around it..." });
+                arrow.setLore((List)b);
+                CamArrow.setItemMeta(arrow);
+                inv.addItem(CamArrow);
                 ItemStack CamChest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
                  for (Enchantment ench : Enchantment.values()) {
                 if (!ench.equals(Enchantment.DURABILITY)) {
                   CamChest.addUnsafeEnchantment(ench, 32767);
                 }
               }
-               LeatherArmorMeta meta = (LeatherArmorMeta)CamChest.getItemMeta();
-               meta.setDisplayName(ChatColor.YELLOW + "Purple Aura");
-                 Object lore = Arrays.asList(new String[] { ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm." });
-               meta.setLore((List)lore);
-               meta.setColor(Color.fromRGB(125, 20, 240));
-                CamChest.setItemMeta(meta);
-                inv.setChestplate(CamChest);
-
-                }
-        for(Player player : Bukkit.getOnlinePlayers())
-                {
-               PlayerInventory inv = player.getInventory();
+               LeatherArmorMeta chest = (LeatherArmorMeta)CamChest.getItemMeta();
+               chest.setDisplayName(ChatColor.YELLOW + "Purple Aura");
+                 Object c = Arrays.asList(new String[] { ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm." });
+               chest.setLore((List)c);
+               chest.setColor(Color.fromRGB(125, 20, 240));
+               CamChest.setItemMeta(chest);
+               inv.setChestplate(CamChest);
                ItemStack CamLegs = new ItemStack(Material.LEATHER_LEGGINGS, 1);
                for (Enchantment ench : Enchantment.values()) {
                 if (!ench.equals(Enchantment.DURABILITY)) {
                     CamLegs.addUnsafeEnchantment(ench, 32767);
                   }
                }
-                 LeatherArmorMeta meta = (LeatherArmorMeta)CamLegs.getItemMeta();
-                 meta.setDisplayName(ChatColor.YELLOW + "Purple Aura");
-                 Object lore = Arrays.asList(new String[] { ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm." });
-                 meta.setLore((List)lore);
-                 meta.setColor(Color.fromRGB(125, 20, 240));
-                 CamLegs.setItemMeta(meta);
+                 LeatherArmorMeta legs = (LeatherArmorMeta)CamLegs.getItemMeta();
+                 legs.setDisplayName(ChatColor.YELLOW + "Purple Aura");
+                 Object d = Arrays.asList(new String[] { ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm." });
+                 legs.setLore((List)d);
+                 legs.setColor(Color.fromRGB(125, 20, 240));
+                 CamLegs.setItemMeta(legs);
                  inv.setLeggings(CamLegs);
-                }
-        for(Player player : Bukkit.getOnlinePlayers())
-                {
-              PlayerInventory inv = player.getInventory();
               ItemStack CamBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
               for (Enchantment ench : Enchantment.values()) {
                 if (!ench.equals(Enchantment.DURABILITY)) {
                      CamBoots.addUnsafeEnchantment(ench, 32767);
                   }
                 }
-               LeatherArmorMeta meta = (LeatherArmorMeta)CamBoots.getItemMeta();
-                meta.setDisplayName(ChatColor.YELLOW + "Purple Aura");
-               Object lore = Arrays.asList(new String[] { ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm." });
-               meta.setLore((List)lore);
-              meta.setColor(Color.fromRGB(125, 20, 240));
-                 CamBoots.setItemMeta(meta);
+               LeatherArmorMeta boots = (LeatherArmorMeta)CamBoots.getItemMeta();
+               boots.setDisplayName(ChatColor.YELLOW + "Purple Aura");
+               Object e = Arrays.asList(new String[] { ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm." });
+               boots.setLore((List)e);
+               boots.setColor(Color.fromRGB(125, 20, 240));
+                 CamBoots.setItemMeta(boots);
                  inv.setBoots(CamBoots);
                 }
     }

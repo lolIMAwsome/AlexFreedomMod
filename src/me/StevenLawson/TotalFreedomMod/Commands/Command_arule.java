@@ -27,7 +27,6 @@ public class Command_arule extends TFM_Command
         playerMsg(ChatColor.DARK_RED + "Rules 3, and 9 do not apply to founders, Chief Dev, RobinGall2910, or Stampy100");
         playerMsg(ChatColor.DARK_RED + "§1[11]§c DONT TELL THE FOUNDER OR PLUGIN DEVS WHAT TO DO!");
         playerMsg(ChatColor.DARK_RED + "Failure to follow these rules will result in suspension!");
-            
             return true;
     }
 }

@@ -62,7 +62,7 @@ public class Command_asshole extends TFM_Command
         
         else
         {
-            smite(player);
+            TFM_Util.playerMsg(sender, "You must supply a reason in order to smite people.", ChatColor.RED);
         }
 
         return true;

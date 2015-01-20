@@ -33,7 +33,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH, blockHostConsole = true)
-@CommandParameters(description = "Makes all admins relog into the server.", usage = "/<command>", aliases = "rl")
+@CommandParameters(description = "Makes all admins relog into the server.", usage = "/<command>")
 public class Command_relogger extends TFM_Command
 {
     @Override
