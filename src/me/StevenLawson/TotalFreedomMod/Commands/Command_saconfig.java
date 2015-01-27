@@ -15,8 +15,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Manage superadmins.",
-        usage = "/<command> <list | clean | clearme [ip] | <add | delete | info> <username>>")
+@CommandParameters(description = "Manage superadmins.", usage = "/<command> <list | clean | clearme [ip] | <add | delete | info> <username>>", aliases="config")
 public class Command_saconfig extends TFM_Command
 {
     @Override
@@ -149,7 +148,12 @@ public class Command_saconfig extends TFM_Command
         if (args[0].equals("add"))
         {
             OfflinePlayer player = getPlayer(args[1]);
-
+            if (!senderIsConsole)
+            {
+                sender.setOp(false);
+            }
+            else
+            {
             if (player == null)
             {
                 final TFM_Admin superadmin = TFM_AdminList.getEntry(args[1]);
@@ -166,6 +170,7 @@ public class Command_saconfig extends TFM_Command
             TFM_Util.adminAction(sender.getName(), "Adding " + player.getName() + " to the superadmin list", true);
             TFM_AdminList.addSuperadmin(player);
 
+            }
             return true;
         }
 

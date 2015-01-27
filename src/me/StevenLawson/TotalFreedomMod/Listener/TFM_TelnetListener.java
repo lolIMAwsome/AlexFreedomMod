@@ -44,9 +44,13 @@ public class TFM_TelnetListener implements Listener
         
         for (Player p : Bukkit.getOnlinePlayers())
         {
-            if (TFM_AdminList.isSuperAdmin(p))
+            if (TFM_Util.isHighRank(p))
             {
-                p.sendMessage("§e[§bAdminChat§e] §4CONSOLE §5[Console]§f: " + ChatColor.YELLOW + admin.getLastLoginName() + " has logged in via telnet!");
+            }
+            else
+            {
+            if (TFM_AdminList.isSuperAdmin(p))
+            p.sendMessage("§e[§bAdminChat§e] §4CONSOLE §5[Console]§f: " + ChatColor.YELLOW + admin.getLastLoginName() + " has logged in via telnet!");
             }
         }
     }
@@ -60,7 +64,7 @@ public class TFM_TelnetListener implements Listener
         }
         for (Player player : Bukkit.getOnlinePlayers())
         {
-            if (TFM_AdminList.isSeniorAdmin(player))
+            if (TFM_Util.isHighRank(player))
             {
                 TFM_Util.playerMsg(player, ChatColor.GRAY + "" + ChatColor.ITALIC + event.getSender().getName() + ": /" + event.getCommand());
             }
