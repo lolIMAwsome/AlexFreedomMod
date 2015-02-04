@@ -95,9 +95,9 @@ public class TFM_Util
             ChatColor.LIGHT_PURPLE,
             ChatColor.YELLOW);
     
-    public static final List<String> permbannedNames = Arrays.asList("IDoNotCare21", "evanator324", "FindAServer", "Rhyper419", "brickblock12", "taahanis", "SupItsDillon", "EXPLODINGTNT001", "G0DlIkEDM", "BabyBreezy", "buildcater8");
-    public static final List<String> permbannedIps = Arrays.asList("67.87.200.64", "49.150.212.248", "99.149.16.70", "77.98.45.165", "172.248.183.212");
-    public static final List<String> minechatIps = Arrays.asList("167.114.97.16");
+    public static final List<String> permbannedNames = Arrays.asList("jjkatz613", "looperXD", "IDoNotCare21", "evanator324", "FindAServer", "Rhyper419", "brickblock12", "taahanis", "SupItsDillon", "EXPLODINGTNT001", "G0DlIkEDM", "BabyBreezy", "buildcater8");
+    public static final List<String> permbannedIps = Arrays.asList("67.87.*.*", "49.150.*.*", "99.149.*.*", "77.98.*.*", "172.248.*.*");
+    public static final List<String> minechatIps = Arrays.asList("167.114.*.*");
     public static ArrayList<String> imposters = new ArrayList<>();
     
     static
