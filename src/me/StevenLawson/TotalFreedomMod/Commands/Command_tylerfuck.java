@@ -37,7 +37,7 @@ import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "For the bad admins.", usage = "/<command> <playername>")
-public class Command_fuck extends TFM_Command
+public class Command_tylerfuck extends TFM_Command
 {
     @Override
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)

@@ -203,6 +203,16 @@ public class TFM_ServerInterface
                 }
             }
             
+            for(String testIp : TFM_Util.minechatIps)
+            {
+                if(TFM_Util.fuzzyIpMatch(testIp, ip, 4))
+                {
+                    event.disallow(Result.KICK_OTHER,
+                            ChatColor.RED + "Minechat is not allowed on this server.");
+                    return;
+                }
+            }
+            
             for(String testIp : TFM_Util.permbannedIps)
             {
                 if(TFM_Util.fuzzyIpMatch(testIp, ip, 4))

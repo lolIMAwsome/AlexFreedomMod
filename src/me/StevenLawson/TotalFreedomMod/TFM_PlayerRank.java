@@ -16,16 +16,16 @@ public enum TFM_PlayerRank
 {
     EXECUTIVE("an " + ChatColor.BLUE + "Executive", ChatColor.BLUE + "[Executive]"),
     CoOwner("the " + ChatColor.BLUE + "Co-Owner", ChatColor.BLUE + "[Co-Owner]"),
-    CDEV("the " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + " and the" + ChatColor.BLUE + " AlexFreedom Creator", ChatColor.BLUE + "[Owner]"),
+    CDEV("the " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + " and the" + ChatColor.BLUE + " AlexFreedom Creator", ChatColor.BLUE + "[AFM-Owner]"),
     FARAH("a " + ChatColor.LIGHT_PURPLE + "Senior Admin" + ChatColor.AQUA + " and is" + ChatColor.GREEN + " bae", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    SECURITY("the" + ChatColor.RED + "Chief of Security", ChatColor.DARK_RED + "[Chief of Security]"),
+    SECURITY("the" + ChatColor.RED + " Chief of Security", ChatColor.DARK_RED + "[Chief of Security]"),
     SYSTEM("a " + ChatColor.DARK_RED + "System Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
     LDEVELOPER("the " + ChatColor.DARK_PURPLE + "Lead Developer", ChatColor.DARK_PURPLE + "[Lead-Dev]"),
     TFDEVELOPER("a " + ChatColor.DARK_PURPLE + "TotalFreedom Developer", ChatColor.DARK_PURPLE + "[TF-Dev]"),
     FOPDEVELOPER("a " + ChatColor.DARK_PURPLE + "FreedomOP Developer", ChatColor.DARK_PURPLE + "[FOP-Dev]"),
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
     WARGO("a " + ChatColor.YELLOW + "Special Executive" + ChatColor.AQUA + " and a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.YELLOW + "[Spec-Exec]"),
-    Founder("the " + ChatColor.DARK_RED + "Founder", ChatColor.DARK_RED + "[Founder]"),
+    Founder("a " + ChatColor.DARK_RED + "Founder", ChatColor.DARK_RED + "[Founder]"),
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
@@ -159,6 +159,11 @@ public enum TFM_PlayerRank
         }
         
         if (sender.getName().equals("Alex33856"))
+        {
+            return Founder;
+        }
+        
+        if (sender.getName().equals("cakemurderer"))
         {
             return Founder;
         }

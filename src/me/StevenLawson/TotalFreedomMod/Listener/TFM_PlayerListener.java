@@ -25,9 +25,11 @@ import me.StevenLawson.TotalFreedomMod.TFM_PlayerRank;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager.RollbackEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_ServerInterface;
+import me.StevenLawson.TotalFreedomMod.TFM_SuspensionList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.playerMsg;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
+import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.plugin;
 import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
@@ -992,8 +994,8 @@ public class TFM_PlayerListener implements Listener
         }
         if (TFM_Util.SPECIAL_EXECS.contains(player.getName()))
         {
-        player.setPlayerListName(ChatColor.YELLOW + player.getName());
-        TFM_PlayerData.getPlayerData(player).setTag("&8[&eSpecial-Exec&8]");
+            player.setPlayerListName(ChatColor.YELLOW + player.getName());
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&eSpecial-Exec&8]");
         }
         if (TFM_Util.WEBDEV.contains(player.getName()))
         {
@@ -1035,7 +1037,7 @@ public class TFM_PlayerListener implements Listener
             player.setDisplayName("Robin");
             //set tag
             event.setJoinMessage(ChatColor.YELLOW + "Guess who came.");
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Sys-Admin&8]");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&9AFM-Owner&8]");
             //Entrance
             TFM_Util.bcastMsg(ChatColor.AQUA + "Robin is a " + ChatColor.DARK_GREEN + " Zombie Killer " + ChatColor.AQUA + " and.. ");
             TFM_Util.bcastMsg(ChatColor.GOLD + ":O  there's more!");
@@ -1077,11 +1079,15 @@ public class TFM_PlayerListener implements Listener
             player.setPlayerListName(ChatColor.GREEN + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&9Lead Web-Dev&8]");
         }
+        else if (username.equalsIgnoreCase("cakemurderer"))
+        {
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Founder&8]");
+        }
         else if (username.equalsIgnoreCase("Alex33856"))
         {
             player.setPlayerListName(ChatColor.GREEN + "Al" + ChatColor.DARK_GREEN + "ex");
             player.setDisplayName("Alex");
-            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.GREEN + "Al" + ChatColor.DARK_GREEN + "ex");
+            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.BLUE + "+" + ChatColor.GREEN + "Al" + ChatColor.DARK_GREEN + "ex");
             //Set tag
             TFM_PlayerData.getPlayerData(player).setTag("&8[&4Founder&8]");
         }
