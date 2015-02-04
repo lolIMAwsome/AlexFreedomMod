@@ -72,9 +72,10 @@ public class TFM_Util
     public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "DarthSalamon", "AcidicCyanide", "wild1145", "WickedGamingUK");
     public static final List<String> AFM_DEVELOPERS = Arrays.asList("tylerhyperHD", "kieran3810");
     public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "RobinGall2910", "Freelix2000", "_GeneralOfGames_");
-    public static final List<String> CO_OWNER = Arrays.asList("Minecraf7pro", "Deadmon12", "_Pedo__Bear_");
+    public static final List<String> CO_OWNER = Arrays.asList("Minecraf7pro", "RobinGall2910");
     public static final List<String> SYS = Arrays.asList("Taterman814", "RedSea11001", "SonicMineCrafter");
     public static final List<String> LSYSTEM = Arrays.asList("Stampy100");
+    public static final List<String> SYSPPL = Arrays.asList("RobinGall2910", "tylerhyperHD", "_herobrian35_", "Alex33856", "dsate1", "kieran3810", "robotexplorer");
     public static final List<String> SPECIAL_EXECS = Arrays.asList("herobrian35", "Typhlosion147", "dsate1", "cldoesmc");
     public static final List<String> WEBDEV = Arrays.asList("jayscoob");
     private static final Random RANDOM = new Random();
@@ -94,7 +95,7 @@ public class TFM_Util
             ChatColor.LIGHT_PURPLE,
             ChatColor.YELLOW);
     
-    public static final List<String> permbannedNames = Arrays.asList("evanator324", "FindAServer", "Rhyper419", "brickblock12", "taahanis", "SupItsDillon", "EXPLODINGTNT001", "G0DlIkEDM", "BabyBreezy", "buildcater8");
+    public static final List<String> permbannedNames = Arrays.asList("IDoNotCare21", "evanator324", "FindAServer", "Rhyper419", "brickblock12", "taahanis", "SupItsDillon", "EXPLODINGTNT001", "G0DlIkEDM", "BabyBreezy", "buildcater8");
     public static final List<String> permbannedIps = Arrays.asList("67.87.200.64", "49.150.212.248", "99.149.16.70", "77.98.45.165", "172.248.183.212");
     public static final List<String> minechatIps = Arrays.asList("167.114.97.16");
     public static ArrayList<String> imposters = new ArrayList<>();

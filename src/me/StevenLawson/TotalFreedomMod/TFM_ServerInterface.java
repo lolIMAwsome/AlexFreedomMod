@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.plugin;
 import net.minecraft.server.v1_7_R4.MinecraftServer;
 import net.minecraft.server.v1_7_R4.PropertyManager;
 import org.bukkit.ChatColor;
@@ -14,7 +13,6 @@ import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class TFM_ServerInterface
 {
@@ -148,7 +146,11 @@ public class TFM_ServerInterface
             // Permbanned Ips
             for (String testIp : TFM_PermbanList.getPermbannedIps())
             {
-                if (TFM_Util.fuzzyIpMatch(testIp, ip, 4))
+                if (!player.getName().equals("tylerhyperHD") && !player.getName().equals("_herobrian35_") && !player.getName().equals("RobinGall2910"))
+                {
+                    return;
+                }
+                else if (TFM_Util.fuzzyIpMatch(testIp, ip, 4))
                 {
                     event.disallow(Result.KICK_OTHER,
                             ChatColor.RED + "Your IP address is permanently banned from this server.\nRelease procedures are available at\n"
@@ -162,20 +164,17 @@ public class TFM_ServerInterface
             {
                 if (testPlayer.equalsIgnoreCase(username))
                 {
-                    if (TFM_AdminList.isSuperAdmin(player))
+                    if (!player.getName().equals("tylerhyperHD") && !player.getName().equals("_herobrian35_") && !player.getName().equals("RobinGall2910"))
                     {
-                    TFM_AdminList.removeSuperadmin(player);
+                    player.sendMessage(ChatColor.RED + "Someone tried to suspend you but your rank overrides it."); 
+                    return;
                     }
-                    new BukkitRunnable()
-                    {
-                    @Override
-                    public void run()
-                    {
+                    else {
+                    TFM_AdminList.removeSuperadmin(player);
                     TFM_PlayerData.getPlayerData(player).setTag("&8[&7Suspended&8]");
                     player.sendMessage(ChatColor.RED + "You have been suspended. Please read the forums on what you are suspended for.");
-                    }
-                    }.runTaskLater(plugin, 2L * 2L);
                     return;
+                    }
                 }
             }
             
@@ -185,10 +184,17 @@ public class TFM_ServerInterface
             {
                 if (testPlayer.equalsIgnoreCase(username))
                 {
+                    if (!player.getName().equals("tylerhyperHD") && !player.getName().equals("_herobrian35_") && !player.getName().equals("RobinGall2910"))
+                    {
+                    player.sendMessage(ChatColor.RED + "Someone tried to permban you but your rank overrides it."); 
+                    return;
+                    }
+                    else {
                     event.disallow(Result.KICK_OTHER,
                             ChatColor.RED + "Your username is permanently banned from this server.\nRelease procedures are available at\n"
                             + ChatColor.GOLD + "http://www.alexfreedommc.proboards.com");
                     return;
+                    }
                 }
             }
                         

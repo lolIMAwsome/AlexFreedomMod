@@ -50,7 +50,13 @@ public class Command_fuck extends TFM_Command
         
         if (player == null)
         {
+            if (args[0].equalsIgnoreCase("me"))
+            {
+            server.dispatchCommand(sender_p, "handjob");
+            }
+            else {
             playerMsg(TotalFreedomMod.PLAYER_NOT_FOUND);
+            }
             return true;
         }
         else if (args.length > 1)
@@ -58,10 +64,6 @@ public class Command_fuck extends TFM_Command
             final String reason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
             smite(player, reason);
             return true;
-        }
-        else if (!player.getName().equals("me"))
-        {
-            server.dispatchCommand(sender_p, "handjob");
         }
         else
         {
