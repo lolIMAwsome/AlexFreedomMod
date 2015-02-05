@@ -19,7 +19,7 @@ public class Command_oblivion
 {
   public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
   {
-    if (!sender.getName().equals("Typhlosion147"))
+    if (!sender.getName().equals("xTyph"))
     {
       sender.sendMessage(TotalFreedomMod.MSG_NO_PERMS);
       
