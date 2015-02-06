@@ -158,7 +158,7 @@ public enum TFM_PlayerRank
             return CoOwner;
         }
         
-        if (sender.getName().equals("Alex33856"))
+        if (sender.getName().equals("AlexTheMurderer"))
         {
             return Founder;
         }

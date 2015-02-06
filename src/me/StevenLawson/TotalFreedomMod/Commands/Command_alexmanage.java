@@ -20,7 +20,7 @@ public class Command_alexmanage extends TFM_Command
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
             
-		if (!sender.getName().equalsIgnoreCase("Alex33856"))
+		if (!sender.getName().equalsIgnoreCase("AlexTheMurderer"))
         if (!sender.getName().equalsIgnoreCase("PiggoWink"))
         if (!sender.getName().equalsIgnoreCase("_herobrian35_"))
             

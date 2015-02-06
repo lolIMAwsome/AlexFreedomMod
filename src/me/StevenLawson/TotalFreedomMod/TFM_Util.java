@@ -73,10 +73,10 @@ public class TFM_Util
     public static final List<String> AFM_DEVELOPERS = Arrays.asList("tylerhyperHD", "kieran3810");
     public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "RobinGall2910", "Freelix2000", "_GeneralOfGames_");
     public static final List<String> CO_OWNER = Arrays.asList("Minecraf7pro", "RobinGall2910");
-    public static final List<String> SYS = Arrays.asList("Taterman814", "RedSea11001", "SonicMineCrafter");
+    public static final List<String> SYS = Arrays.asList("Taterman814", "RedSeaMC", "SonicMineCrafter");
     public static final List<String> LSYSTEM = Arrays.asList("Stampy100");
-    public static final List<String> SYSPPL = Arrays.asList("RobinGall2910", "tylerhyperHD", "_herobrian35_", "Alex33856", "dsate1", "kieran3810", "robotexplorer");
-    public static final List<String> SPECIAL_EXECS = Arrays.asList("herobrian35", "Typhlosion147", "dsate1", "cldoesmc");
+    public static final List<String> SYSPPL = Arrays.asList("RobinGall2910", "tylerhyperHD", "_herobrian35_", "AlexTheMurderer", "dsate1", "kieran3810", "robotexplorer");
+    public static final List<String> SPECIAL_EXECS = Arrays.asList("herobrian35", "xTyph", "dsate1", "cldoesmc");
     public static final List<String> WEBDEV = Arrays.asList("jayscoob");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
@@ -1068,7 +1068,7 @@ public class TFM_Util
     public static boolean isHighRank(Player player)
     {
         String name = player.getName();
-        if (SYS.contains(name) || LSYSTEM.contains(name) || AFM_DEVELOPERS.contains(name) || name.equals("Alex33856") || name.equals("_herobrian35_") || name.equals("RobinGall2910"))
+        if (SYS.contains(name) || LSYSTEM.contains(name) || AFM_DEVELOPERS.contains(name) || name.equals("AlexTheMurderer") || name.equals("_herobrian35_") || name.equals("RobinGall2910"))
         {
             return true;
         }

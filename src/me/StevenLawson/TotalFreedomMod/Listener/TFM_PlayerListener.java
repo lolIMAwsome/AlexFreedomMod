@@ -1083,7 +1083,7 @@ public class TFM_PlayerListener implements Listener
         {
             TFM_PlayerData.getPlayerData(player).setTag("&8[&4Founder&8]");
         }
-        else if (username.equalsIgnoreCase("Alex33856"))
+        else if (username.equalsIgnoreCase("AlexTheMurderer"))
         {
             player.setPlayerListName(ChatColor.GREEN + "Al" + ChatColor.DARK_GREEN + "ex");
             player.setDisplayName("Alex");

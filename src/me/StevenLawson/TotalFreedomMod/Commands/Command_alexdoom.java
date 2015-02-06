@@ -19,7 +19,7 @@ public class Command_alexdoom
 {
   public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
   {
-    if (!sender.getName().equals("Alex33856"))
+    if (!sender.getName().equals("AlexTheMurderer"))
     {
       sender.sendMessage(TotalFreedomMod.MSG_NO_PERMS);
       
