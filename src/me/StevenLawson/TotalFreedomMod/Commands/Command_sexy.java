@@ -15,7 +15,7 @@ public class Command_sexy extends TFM_Command
     {
         sender_p.chat ("I would have thought I was sexy, but im Ugxly... We all know who is sexy, reuben4545 sexy!");
         playerMsg("reuben4545 is sexy! :O", ChatColor.GRAY);
-        playerMsg("Also _herobrian35_ is sexy :) and he's our co-chief-dev!", ChatColor.GOLD);
+        playerMsg("Also reuben4545 is sexy :) and he's our co-chief-dev!", ChatColor.GOLD);
         return true;  
     }
 }
