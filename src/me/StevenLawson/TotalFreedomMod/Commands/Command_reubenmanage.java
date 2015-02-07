@@ -13,16 +13,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Alex Managment", usage = "/<command> [list | clean | <add|del|info> <username> | test <on|off>>]")
+@CommandParameters(description = "Reuben Managment", usage = "/<command> [list | clean | <add|del|info> <username> | test <on|off>>]")
 public class Command_alexmanage extends TFM_Command
 {
     @Override
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
             
-		if (!sender.getName().equalsIgnoreCase("AlexTheMurderer"))
-        if (!sender.getName().equalsIgnoreCase("PiggoWink"))
-        if (!sender.getName().equalsIgnoreCase("_herobrian35_"))
+		if (!sender.getName().equalsIgnoreCase("reuben4545"))
+        if (!sender.getName().equalsIgnoreCase("lewis11620"))
+        if (!sender.getName().equalsIgnoreCase("Reuben4545BACKUP"))
             
         {
             TFM_Util.adminAction("[Alert:Warning] " + sender.getName(), "Nice try, using a manager command", true);
