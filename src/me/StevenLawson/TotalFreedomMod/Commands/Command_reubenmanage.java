@@ -13,7 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Reuben Managment", usage = "/<command> [list | clean | <add|del|info> <username> | test <on|off>>]")
+@CommandParameters(description = "Reubens Managment Command", usage = "/<command> [list | clean | <add|del|info> <username> | test <on|off>>]")
 public class Command_alexmanage extends TFM_Command
 {
     @Override
