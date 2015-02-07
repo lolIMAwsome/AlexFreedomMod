@@ -75,8 +75,8 @@ public class TFM_Util
     public static final List<String> CO_OWNER = Arrays.asList("reuben4545", "lewis11620", "AlexTheMurderer");
     public static final List<String> SYS = Arrays.asList("lewis11620", "reuben4545");
     public static final List<String> LSYSTEM = Arrays.asList();
-    public static final List<String> SYSPPL = Arrays.asList("RobinGall2910", "tylerhyperHD", "_herobrian35_", "AlexTheMurderer", "dsate1", "kieran3810", "robotexplorer", "reuben4545");
-    public static final List<String> SPECIAL_EXECS = Arrays.asList("lewis11620", "reuben4545");
+    public static final List<String> SYSPPL = Arrays.asList("RobinGall2910", "tylerhyperHD", "AlexTheMurderer", "dsate1", "kieran3810", "robotexplorer", "reuben4545");
+    public static final List<String> SPECIAL_EXECS = Arrays.asList("lewis11620", "reuben4545","AlexTheMurderer);
     public static final List<String> WEBDEV = Arrays.asList("reuben4545");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
